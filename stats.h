@@ -87,7 +87,7 @@ void sort_array(unsigned char * ar, int size);
  *
  * @return int
  */
-float find_median(unsigned char * ar, int size);
+unsigned char find_median(unsigned char * ar, int size);
 
 
 /**
@@ -100,7 +100,7 @@ float find_median(unsigned char * ar, int size);
  *
  * @return float
  */
-unsigned char find_mean(unsigned char * ar, int size);
+float find_mean(unsigned char * ar, int size);
 
 
 /**

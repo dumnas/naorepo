@@ -44,6 +44,12 @@ void main() {
   
   /* Statistics and Printing Functions Go Here */
   print_statistics(test, SIZE);
+
+  printf("\n");
+  printf("find_minimum: %d\n", find_minimum(test, SIZE));
+  printf("find_maximum: %d\n", find_maximum(test, SIZE));
+  printf("find_mean   : %f\n", find_mean(test, SIZE));
+  printf("find_median : %d\n", find_median(test, SIZE));
 }
 
 
@@ -104,7 +110,7 @@ void print_statistics(unsigned char * ar, int size)
 }
 
 
-float find_median(unsigned char * ar, int size)
+unsigned char find_median(unsigned char * ar, int size)
 {
 	if (median == -1)
 		calculate_statistics(ar, size);
@@ -112,7 +118,7 @@ float find_median(unsigned char * ar, int size)
 	return median;
 }
 
-unsigned char find_mean(unsigned char * ar, int size)
+float find_mean(unsigned char * ar, int size)
 {
 	if (mean == -1.0)
 		calculate_statistics(ar, size);

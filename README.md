@@ -17,4 +17,3 @@ I believe this practice adds confusion and it does not improve the code readabil
 
 
 
-
