@@ -38,12 +38,11 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
+  print_array(test, SIZE);
 
   calculate_statistics(test, SIZE);
   
   /* Statistics and Printing Functions Go Here */
-  print_array(test, SIZE);
   print_statistics(test, SIZE);
 }
 
@@ -53,6 +52,7 @@ void print_array(unsigned char * ar, int size)
 	for (int i = 0; i < size; i++) {
 		printf("%2d: %d\n", i, ar[i]);
 	}
+	printf("\n");
 }
 
 
@@ -66,8 +66,8 @@ int comp(const void *a, const void *b)
 void sort_array(unsigned char * ar, int size)
 {
 	qsort(ar, size, sizeof(unsigned char), comp);
-	for (int i = 0; i < size; i++)
-		printf("%2d: %d\n", i, ar[i]);
+	//for (int i = 0; i < size; i++)
+	//	printf("%2d: %d\n", i, ar[i]);
 }
 
 
@@ -101,7 +101,6 @@ void print_statistics(unsigned char * ar, int size)
 	printf("maximum: %d\n", maximum);
 	printf("mean   : %f\n", mean);
 	printf("median : %d\n", median);
-
 }
 
 
