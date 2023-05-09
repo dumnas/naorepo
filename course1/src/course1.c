@@ -38,7 +38,10 @@ int8_t test_data1() {
     return TEST_ERROR;
   }
 
-  digits = my_itoa( num, ptr, BASE_16);   
+  digits = my_itoa( num, ptr, BASE_16);
+
+  printf("digits = %d, %s\n", digits, ptr);
+  
   value = my_atoi( ptr, digits, BASE_16);
   #ifdef VERBOSE
   PRINTF("  Initial number: %d\n", num);
@@ -328,9 +331,9 @@ void course1(void)
   int8_t results[TESTCOUNT];
 
   results[0] = test_data1();
+  results[1] = test_data2();
 
   /*
-  results[1] = test_data2();
   results[2] = test_memmove1();
   results[3] = test_memmove2();
   results[4] = test_memmove3();

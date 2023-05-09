@@ -1,0 +1,11 @@
+Course1.cflags
+Course1.config
+Course1.creator
+Course1.creator.user
+Course1.cxxflags
+Course1.files
+Course1.includes
+course1.map 
+course1.out 
+src/*.o
+

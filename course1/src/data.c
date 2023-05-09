@@ -72,5 +72,44 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base)
 
 int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
 {
-	return base;
+	int sign = 1;
+	if (*ptr == '-')
+		sign = -1;
+
+	uint8_t * ptr_tmp = ptr;
+
+	for (int i = 0; i < digits - 1; i++) {
+		//printf("%c ", *ptr_tmp);
+		ptr_tmp++;
+	}
+	//printf("\n");
+
+	ptr_tmp--;
+
+	int base_pow = 1;
+	int32_t value = 0;
+
+	printf("Before the loop %d\n", digits);
+
+	for (int i = 0; i < digits - 1; i++) {
+
+		if (*ptr_tmp == '-')
+			break;
+
+		int dec;
+		if (*ptr_tmp >= 'A') {
+			dec = *ptr_tmp - 'A' + 10;
+		}
+		else {
+			dec = *ptr_tmp - '0';
+		}
+
+		value += dec * base_pow;
+		//printf("%c, %d (%d)\n", *ptr_tmp, dec, base_pow);
+		
+		ptr_tmp--;
+		base_pow *= base;	
+	}
+
+	return value * sign;
 }
