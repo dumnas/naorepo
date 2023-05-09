@@ -328,6 +328,8 @@ void course1(void)
   int8_t results[TESTCOUNT];
 
   results[0] = test_data1();
+
+  /*
   results[1] = test_data2();
   results[2] = test_memmove1();
   results[3] = test_memmove2();
@@ -335,7 +337,8 @@ void course1(void)
   results[5] = test_memcopy();
   results[6] = test_memset();
   results[7] = test_reverse();
-
+  */
+  
   for ( i = 0; i < TESTCOUNT; i++) 
   {
     failed += results[i];

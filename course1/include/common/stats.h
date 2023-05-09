@@ -21,10 +21,10 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-unsigned char minimum = 255;
-unsigned char maximum = 0;
-float mean = -1.0;
-int median = -1;
+//unsigned char minimum = 255;
+//unsigned char maximum = 0;
+//float mean = -1.0;
+//int median = -1;
 
 
 /**

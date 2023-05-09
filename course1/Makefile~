@@ -97,7 +97,7 @@ clean:
 
 $(TARGET): $(OBJS) $(SOURCES)
 	$(CC) $(INCLUDES) $(CFLAGS) $(LDFLAGS) -o $(TARGET) $(OBJS)
-
+	size $(TARGET)
 
 
 # for project.asm

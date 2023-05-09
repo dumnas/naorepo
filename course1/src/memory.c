@@ -48,3 +48,51 @@ void clear_all(char * ptr, unsigned int size){
   set_all(ptr, 0, size);
 }
 
+
+
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length)
+{
+	return dst;
+}
+
+
+uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length)
+{
+	return dst;
+}
+
+
+uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value)
+{
+	return src;
+}
+
+
+uint8_t * my_memzero(uint8_t * src, size_t length)
+{
+	return src;
+}
+
+
+uint8_t * my_reverse(uint8_t * src, size_t length)
+{
+	return src;
+}
+
+
+int32_t * reserve_words(size_t length)
+{
+	int32_t * p = (int32_t *)malloc(length * sizeof(int32_t) );
+	if (p == NULL) {
+		printf("Not enough memory\n");
+		return NULL;
+	}
+
+	return p;
+}
+
+
+void free_words(uint32_t * src)
+{
+	free(src);
+}

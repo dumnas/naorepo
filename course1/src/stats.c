@@ -20,15 +20,22 @@
  */
 
 
-
 #include <stdio.h>
 #include <limits.h>
 #include <assert.h>
 #include <stdlib.h>
-#include "stats.h"
+#include <stats.h>
+#include <platform.h>
 
 /* Size of the Data Set */
 #define SIZE (40)
+
+
+
+unsigned char minimum = 255;
+unsigned char maximum = 0;
+float mean = -1.0;
+int median = -1;
 
 
 // void main() {
@@ -51,10 +58,14 @@
 
 void print_array(unsigned char * ar, int size)
 {
+#ifdef VERBOSE
 	for (int i = 0; i < size; i++) {
-		printf("%2d: %d\n", i, ar[i]);
+		//printf("%2d: %d\n", i, ar[i]);
+		PRINTF("%2d: %d\n", i, ar[i]);
 	}
+#endif
 }
+
 
 
 int comp(const void *a, const void *b)
