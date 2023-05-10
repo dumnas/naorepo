@@ -114,11 +114,27 @@ uint8_t * my_memzero(uint8_t * src, size_t length)
 uint8_t * my_reverse(uint8_t * src, size_t length)
 {
 	uint8_t * p_src = src;
-	for (int i = 0; i = length; i++)
+	for (int i = 0; i < length; i++) {
+		//printf("before %2d: %d\n", i, *p_src);
 		p_src++;
+	}
 
-
+	uint8_t * p_end = p_src;
+	p_end--;
+	p_src = src;             // reset
 	
+	for (int i = 0; i < length / 2; i++) {
+		uint8_t tmp = *p_src;
+		*p_src++ = *p_end;
+		*p_end-- = tmp;
+	}
+
+	p_src = src;
+	printf("\n");
+	for (int i = 0; i < length; i++) {
+		//printf("after %3d: %d\n", i, *p_src);
+		p_src++;
+	}
 	return src;
 }
 
