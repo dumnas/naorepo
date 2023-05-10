@@ -37,8 +37,8 @@ BASENAME = course1
 
 #CC = gcc
 ifeq ($(PLATFORM), HOST)
-  CC = gcc -DHOST -DCOURSE1 -DVERBOSE
-  #CC = gcc -DHOST -DCOURSE1
+  #CC = gcc -DHOST -DCOURSE1 -DVERBOSE
+  CC = gcc -DHOST -DCOURSE1
   LDFLAGS = -Wl,-Map=$(MAPFILE)
   CPPFLAGS =
   CFLAGS = -Wall -Werror -g -O0 -std=c99

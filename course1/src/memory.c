@@ -51,31 +51,74 @@ void clear_all(char * ptr, unsigned int size){
 
 
 uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length)
-{
+{		
+	uint8_t tmp[length];
+
+	uint8_t * p_src = src;
+	uint8_t * p_tmp = tmp;
+	
+	for (int i = 0; i < length; i++) {
+		//printf("%d | ", *p_src);
+		*p_tmp++ = *p_src++;
+	}
+
+	p_tmp = tmp;
+	uint8_t * p_dst = dst;
+	
+	dst = (uint8_t *) malloc (sizeof(uint8_t) * length);
+	if (dst == NULL) {
+		printf("Not enough memory (my_memmove)\n");
+		return NULL;
+	}
+	for (int i = 0; i < length; i++) {
+		*p_dst++ = *p_tmp++;
+	}
+	
 	return dst;
 }
 
 
 uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length)
 {
+	uint8_t * p_src = src;
+	uint8_t * p_dst = dst;
+
+	for (int i = 0; i < length; i++) {
+		*p_dst++ = *p_src++;
+	}
+
 	return dst;
 }
 
 
 uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value)
 {
+	uint8_t * src_tmp = src;
+	for (int i = 0; i < length; i++)
+		*src_tmp++ = value;
+	
 	return src;
 }
 
 
 uint8_t * my_memzero(uint8_t * src, size_t length)
 {
+	uint8_t * src_tmp = src;
+	for (int i = 0; i < length; i++)
+		*src_tmp++ = 0;
+
 	return src;
 }
 
 
 uint8_t * my_reverse(uint8_t * src, size_t length)
 {
+	uint8_t * p_src = src;
+	for (int i = 0; i = length; i++)
+		p_src++;
+
+
+	
 	return src;
 }
 
