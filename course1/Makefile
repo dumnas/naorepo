@@ -47,7 +47,7 @@ endif
 ifeq ($(PLATFORM), MSP432)
 
   # Architectures Specific Flags
-  LINKER_FILE = -T ../msp432p401r.lds
+  LINKER_FILE = -T msp432p401r.lds
   CPU   = cortex-m4
   ARCH  = armv7e-m
   FLOAT = hard
